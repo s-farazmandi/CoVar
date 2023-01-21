@@ -1,5 +1,5 @@
 numpy==1.21.6
-pandas==1.5.2
+pandas==1.3.5
 Pillow==9.4.0
 Plost==0.2.5
 pyxlsb==1.0.10
