@@ -1,4 +1,4 @@
-numpy==1.23.1
+numpy==1.21.6
 pandas==1.5.2
 Pillow==9.4.0
 Plost==0.2.5
