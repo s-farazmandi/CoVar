@@ -16,7 +16,7 @@ import plost
 
 st.set_page_config(
     page_title="CoVar",
-    page_icon="resources\icon.png",
+    page_icon="resources/icon.png",
     layout="centered",
     initial_sidebar_state="auto",
     menu_items=None
@@ -93,7 +93,7 @@ elif selected == "DB":
         ).lower().capitalize()
 
     if lineage:
-        con=sq.connect('db\covar.db')
+        con=sq.connect('db/covar.db')
         cur=con.cursor()
         sql_lineage = (lineage,)
         lineage_checker = cur.execute('''
@@ -174,7 +174,7 @@ elif selected == "DB":
                 '''.format(pdb_id), width=500 ,height=500 )
 
             #mutation_chart svg
-            mutation_chart_location = f"resources\{chart_id}.svg"
+            mutation_chart_location = f"resources/{chart_id}.svg"
             def render_svg(svg):
                 #Renders the given svg string."""
                 b64 = base64.b64encode(svg.encode('utf-8')).decode("utf-8")
@@ -223,7 +223,7 @@ elif selected == "DB":
             con.close()
 
     elif label:
-        con=sq.connect('db\covar.db')
+        con=sq.connect('db/covar.db')
         cur=con.cursor()
         sql_label =(label,)
         label_checker = cur.execute('''
@@ -305,7 +305,7 @@ elif selected == "DB":
                 '''.format(pdb_id), width=500 ,height=500 )
 
             #mutation_chart svg
-            mutation_chart_location = f"resources\{chart_id}.svg"
+            mutation_chart_location = f"resources/{chart_id}.svg"
             def render_svg(svg):
                 #Renders the given svg string."""
                 b64 = base64.b64encode(svg.encode('utf-8')).decode("utf-8")
@@ -395,13 +395,13 @@ elif selected == "Help":
         st_lottie(help_json_2)  
 
     with st.expander("SARS-CoV-2 biology, evolution and mutations and what benefits could studying it have:"):
-        st.video("resources\evolution.webm")
+        st.video("resources/evolution.webm")
         vidcol1, vidcol2, vidcol3 = st.columns([5,3,3])
         with vidcol2:
             st.caption("[Source](https://www.youtube.com/watch?v=JmJIF47_f1s)")
 
     with st.expander("Pango lineages tree map:"):
-        st.image("resources\pango.png")
+        st.image("resources/pango.png")
 
     with st.expander("How to use?"):
         st.info('''
